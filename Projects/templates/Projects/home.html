@@ -1,0 +1,24 @@
+{% extends 'Projects/base.html' %}
+
+{% block content %}
+
+<div class="container text-center">
+<h1>Madhav Mohanakrishnan's PortFolio</h1>
+<br>
+{% load static %}
+
+<img src="{% static 'Projects/IMG_9228.jpg'   %}" height=200 width=200>
+</div>
+{% for project in projects %}
+<br>
+<h2>{{ project.title }}</h2>
+<br>
+<h3>{{ project.description }}</h3>
+<br>
+<img src="{{ project.image.url }}" height=200 width=200>
+<br>
+
+{% endfor %}
+
+{% endblock %}
+

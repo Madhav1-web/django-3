@@ -1,0 +1,24 @@
+{% extends 'Projects/base.html' %}
+
+{% block content %}
+
+<h2> Madhav has written {{ blog_count}} blog{{ blog_count|pluralize }} </h2>
+<div class="container text-center">
+<h1>Blogs</h1>
+</div>
+{% for blog1 in blog %}
+
+<a href="{% url 'blog:detail' blog1.id %}"><h3>{{ blog1.title }}</h3></a>
+<br>
+{{ blog1.date|date:'M d Y'|upper }}
+<br>
+{{ blog1.description|truncatechars:100 }}
+<br>
+<br>
+
+
+{% endfor %}
+
+
+
+{% endblock %}
